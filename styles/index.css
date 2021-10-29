@@ -1,0 +1,629 @@
+/* VARIABLES*/
+/*Container styling */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 95vw;
+  max-width: 992px;
+  display: flex;
+  flex-direction: column;
+}
+
+label.error {
+  color: red;
+  font-size: 13px;
+  margin-top: 7px;
+  width: 100%;
+}
+
+/*Navbar styling*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  /*Logo Styling*/
+}
+
+.navbar .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar .logout-btn {
+  color: red;
+  text-decoration: none;
+  display: flex;
+  border: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: transparent;
+  align-items: center;
+  font-size: 20px;
+  padding: 0;
+  margin-left: 5px;
+  justify-content: center;
+}
+
+.navbar .logout-btn:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.navbar .btns {
+  display: flex;
+}
+
+.navbar .btns .username {
+  font-size: 23px;
+}
+
+/*Importance section styling*/
+.importance {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.importance .color {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+  min-width: 50px;
+  justify-content: space-between;
+  margin-right: 3px;
+  font-size: smaller;
+}
+
+.importance .color p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.importance .color div {
+  width: 100%;
+  height: 10px;
+}
+
+/* SORTING STYLING SECTION   */
+.sort-container {
+  margin-top: 15px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.sort-container .radio-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.sort-container .radio-container .radio {
+  text-transform: uppercase;
+  margin: 0px 0px 16px 0px;
+  display: block;
+  cursor: pointer;
+}
+
+.sort-container .radio-container .radio input {
+  display: none;
+}
+
+.sort-container .radio-container .radio input + span {
+  line-height: 22px;
+  height: 22px;
+  padding-left: 22px;
+  display: block;
+  position: relative;
+}
+
+.sort-container .radio-container .radio input + span:not(:empty) {
+  padding-left: 30px;
+}
+
+.sort-container .radio-container .radio input + span:before, .sort-container .radio-container .radio input + span:after {
+  content: '';
+  width: 22px;
+  height: 22px;
+  display: block;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+
+.sort-container .radio-container .radio input + span:before {
+  background: #D1D7E3;
+  transition: background 0.2s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2);
+}
+
+.sort-container .radio-container .radio input + span:after {
+  background: #fff;
+  transform: scale(0.78);
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4);
+}
+
+.sort-container .radio-container .radio input:checked + span:before {
+  transform: scale(1.04);
+  background: #23BE0A;
+}
+
+.sort-container .radio-container .radio input:checked + span:after {
+  transform: scale(0.4);
+  transition: transform .3s ease;
+}
+
+.sort-container .radio-container .radio:hover input + span:before {
+  transform: scale(0.92);
+}
+
+.sort-container .radio-container .radio:hover input + span:after {
+  transform: scale(0.74);
+}
+
+.sort-container .radio-container .radio:hover input:checked + span:after {
+  transform: scale(0.4);
+}
+
+/*ADD TODO FORM STYLING */
+.add-todo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 1rem;
+  /*INPUT BOX MATERIAL BY https://codepen.io/lucasyem/pen/ZEEYKdj*/
+  /* reset input */
+  /*Material design button with ripple*/
+}
+
+.add-todo .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-todo .title .color-btn {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  background-color: #fff;
+  border: none;
+}
+
+.add-todo .title .color-btn:hover {
+  cursor: pointer;
+}
+
+.add-todo .form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 95%;
+}
+
+.add-todo .form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #000;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.add-todo .form__field::placeholder {
+  color: transparent;
+}
+
+.add-todo .form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.add-todo .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.add-todo .form__field:focus {
+  padding-bottom: 6px;
+  border-width: 3px;
+  border-color: #23BE0A;
+}
+
+.add-todo .form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #23BE0A;
+  font-weight: 700;
+}
+
+.add-todo .form__field:required, .add-todo .form__field:invalid {
+  box-shadow: none;
+}
+
+.add-todo button[type="submit"] {
+  margin-top: 15px;
+  position: relative;
+  max-width: 167px;
+  width: 50%;
+  overflow: hidden;
+  transition: background 400ms;
+  color: #fff;
+  background-color: #23BE0A;
+  padding: 1rem 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  outline: 0;
+  border: 0;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  /* black with 30% opacity */
+  cursor: pointer;
+}
+
+.add-todo span.ripple {
+  position: absolute;
+  /* The absolute position we mentioned earlier */
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/*Select Box Styling by  https://codepen.io/microfront/pen/NXGrGQ*/
+.chosen-wrapper {
+  width: 95%;
+  position: relative;
+}
+
+.chosen-wrapper:after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 32px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid rgba(0, 0, 0, 0.5);
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 9;
+}
+
+.chosen-wrapper.is-active:after {
+  border-top: 8px solid black;
+  transform: rotate(180deg);
+}
+
+.chosen-wrapper .chosen-container .chosen-single {
+  border-radius: 0;
+  height: 70px;
+  border: solid 2px #9b9b9b;
+  background: #fff;
+  font-size: 1.3rem;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 0 30px;
+  line-height: 80px;
+  transition: all 0.3s ease;
+  box-shadow: none;
+  background: #fff;
+}
+
+.chosen-wrapper .chosen-container .chosen-single b {
+  display: none !important;
+}
+
+.chosen-wrapper .chosen-container .chosen-single span {
+  letter-spacing: 0;
+  padding: 0;
+  line-height: inherit;
+}
+
+.chosen-wrapper .chosen-container.chosen-with-drop .chosen-single {
+  border-width: 2px 2px 1px;
+  border-color: #000  #000 #d9d9d9;
+  color: #000;
+  background-image: none;
+}
+
+.chosen-wrapper .chosen-container.chosen-with-drop .chosen-drop {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.chosen-wrapper .chosen-container.chosen-container-single-nosearch .chosen-search {
+  display: none;
+}
+
+.chosen-wrapper .chosen-container .chosen-drop {
+  letter-spacing: 0;
+  border-radius: 0;
+  box-shadow: none;
+  border-width: 0 2px 2px;
+  border-color: #000;
+  margin-top: 0;
+  transition: all 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  opacity: 0;
+}
+
+.chosen-wrapper .chosen-container .chosen-results {
+  font-size: 22px;
+  color: #000;
+  max-height: 245px;
+  margin: 0;
+  padding: 0;
+}
+
+.chosen-wrapper .chosen-container .chosen-results li {
+  padding: 16px 30px 18px;
+  margin: 0;
+  border-bottom: 1px solid #e5e5e5;
+  transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  line-height: 20px;
+}
+
+.chosen-wrapper .chosen-container .chosen-results li.highlighted {
+  background-color: #eeeeee !important;
+  color: #000;
+  background-image: none;
+}
+
+.chosen-wrapper--style2:after {
+  right: 0;
+}
+
+.chosen-wrapper--style2:before {
+  content: '';
+  width: 0;
+  border-top: 2px solid #23BE0A;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  transition: all 0.2s cubic-bezier(0.06, 1, 0.89, 0.85);
+}
+
+.chosen-wrapper--style2.is-active:before {
+  width: 100%;
+}
+
+.chosen-wrapper--style2 .chosen-container .chosen-single {
+  border-width: 0 0 2px;
+  padding: 0;
+}
+
+.chosen-wrapper--style2 .chosen-container.chosen-with-drop .chosen-single {
+  border-width: 0 0 2px;
+}
+
+.chosen-wrapper--style2 .chosen-container.chosen-with-drop .chosen-drop {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(5px);
+}
+
+.chosen-wrapper--style2 .chosen-container .chosen-drop {
+  border-color: #d9d9d9;
+  border-top: 2px solid #d9d9d9;
+}
+
+.chosen-wrapper--style2 .chosen-container .chosen-results li {
+  padding: 16px 15px 18px;
+}
+
+/*ScrollBox style*/
+.nicescroll-rails {
+  border-left: 1px solid #d9d9d9;
+  transform: translate(-2px);
+  top: 0 !important;
+}
+
+.nicescroll-rails .nicescroll-cursors {
+  width: 6px !important;
+  margin-right: 2px;
+}
+
+/*TODOS LISTING STYLINGS*/
+.todos-container {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.todos-container .todo {
+  display: flex;
+  justify-content: space-between;
+  border-left: #23BE0A solid 3px;
+  padding-left: 6px;
+  margin-bottom: 5px;
+}
+
+.todos-container .todo p {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.todos-container .todo .operations-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todos-container .todo .operations-container button {
+  padding: 3px;
+  margin: 0px 3px;
+  border: none;
+  background-color: #fff;
+  font-size: 1.5rem;
+  border-radius: 100%;
+}
+
+.todos-container .todo .operations-container button:hover {
+  cursor: pointer;
+}
+
+.todos-container .todo .operations-container .delete {
+  color: red;
+}
+
+.todos-container .todo .operations-container .done {
+  color: #23BE0A;
+}
+
+.modal {
+  /*Color Schema Select div*/
+  /*Create Schema div*/
+  /* Style the tab */
+  /* Style the buttons inside the tab */
+  /* Change background color of buttons on hover */
+  /* Create an active/current tablink class */
+  /* Style the tab content */
+}
+
+.modal .select-div {
+  display: flex;
+  flex-direction: column;
+  /*Schema div styling*/
+}
+
+.modal .select-div .selected {
+  border: solid #23BE0A 3px;
+  padding: 3px;
+}
+
+.modal .select-div .schema {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.modal .select-div .schema p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal .select-div .schema p .delete-schema {
+  color: red;
+  border: none;
+  background-color: transparent;
+  font-size: 22px;
+}
+
+.modal .select-div .schema p .delete-schema:hover {
+  cursor: pointer;
+}
+
+.modal .select-div .schema .colors-schema {
+  display: flex;
+  transition: opacity;
+}
+
+.modal .select-div .schema .colors-schema:hover {
+  cursor: pointer;
+  opacity: .6;
+}
+
+.modal .select-div .schema .colors-schema .color-schema {
+  height: 20px;
+  width: 20%;
+  margin: 0;
+}
+
+.modal .create-div .schema-btn {
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.modal .create-div .schema-btn:hover {
+  cursor: pointer;
+}
+
+.modal .create-div .create-div-input {
+  display: flex;
+  margin: 5px 0px;
+  justify-content: space-between;
+}
+
+.modal .create-div .create-div-input input[type="color"] {
+  border: none;
+  background-color: #fff;
+  width: 50px;
+}
+
+.modal .tab {
+  overflow: hidden;
+}
+
+.modal .tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+.modal .tab button:hover {
+  background-color: #ddd;
+}
+
+.modal .tab button.active {
+  background-color: #ccc;
+}
+
+.modal .tabcontent {
+  display: none;
+  overflow-y: auto;
+  height: 300px;
+  padding: 6px 12px;
+  border-top: none;
+}
+
+@media only screen and (max-width: 400px) {
+  .username {
+    font-size: 19px !important;
+  }
+  .logout-btn {
+    font-size: 18px !important;
+  }
+}
+/*# sourceMappingURL=index.css.map */
