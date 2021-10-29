@@ -15,6 +15,8 @@ $id = $user->createUser($username,$email,$password_hash);
 if($id){
     $_SESSION["user_id"] = $id;
     echo $id;
+}else{
+    echo "false";
 }
 
 

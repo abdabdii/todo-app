@@ -1,6 +1,5 @@
 $(function(){
-    
-
+   
     // VALIDATE THE INPUT
     $("#login-form").validate({
         
@@ -17,24 +16,15 @@ $(function(){
             }
 
         
-    }})
-
-
-
-
-    
-    //AJAX CALL TO LOGIN THE USER
-    $("body").on('submit',"#login-form",
-    function (e){
-        e.preventDefault()
-       if(!($(".error").length >0)){
-        var values = $(this).serialize()
+    },
+    submitHandler:function (form){
         $.ajax({
             url:"./services/login.php",
             type:"post",
-            data:values,
+            data:$(form).serialize(),
             success:function(res){
-                if(res){
+                if(res!=="false"){
+                    alert(res + "Scacs")
                     window.location.href="./"
                     
                 }else{
@@ -45,10 +35,17 @@ $(function(){
                 }
             }
         })
-       }
+       return false;
     }
+
+
+})
+
+
+
+
     
-    )
+    
   
    
 })

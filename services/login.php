@@ -13,6 +13,8 @@ if($authUser){
     $id = $authUser;
     $_SESSION["user_id"] = $id;
     echo $id;
+}else{
+    echo "false";
 }
 
 
